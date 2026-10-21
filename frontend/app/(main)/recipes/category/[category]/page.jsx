@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import RecipeGrid from "@/components/RecipeGrid";
-// import { getMealsByCategory } from "@/actions/mealdb.actions";
+import { getMealsByCategory } from "../../../actions/mealdb.actions";
 
 export default function CategoryRecipesPage() {
   const params = useParams();
@@ -12,7 +12,7 @@ export default function CategoryRecipesPage() {
     <RecipeGrid
       type="category"
       value={category}
-      // fetchAction={getMealsByCategory}
+      fetchAction={getMealsByCategory}
       backLink="/dashboard"
     />
   );
