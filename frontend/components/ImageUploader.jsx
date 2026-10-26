@@ -5,7 +5,7 @@ import { useDropzone } from "react-dropzone";
 import { Camera, Upload, X, Loader2, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { RingLoader } from "react-spinners";
+// import { RingLoader } from "react-spinners";
 
 export default function ImageUploader({ onImageSelect, loading }) {
   const [preview, setPreview] = useState(null);
@@ -75,7 +75,8 @@ export default function ImageUploader({ onImageSelect, loading }) {
         )}
         {loading && (
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <RingLoader color="white" />
+            {/* <RingLoader color="white" /> */}
+            loading
           </div>
         )}
       </div>

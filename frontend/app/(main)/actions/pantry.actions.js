@@ -6,7 +6,7 @@ import { freePantryScans, proTierLimit } from "@/lib/arcjet";
 import { request } from "@arcjet/next";
 
 const STRAPI_URL =
-  process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+  process.env.NEXT_STRAPI_PUBLIC_URL || "http://localhost:1337";
 const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
@@ -58,7 +58,7 @@ export async function scanPantryImage(formData) {
     const base64Image = buffer.toString("base64");
 
     // Call Gemini Vision API
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });
 
     const prompt = `
 You are a professional chef and ingredient recognition expert. Analyze this image of a pantry/fridge and identify all visible food ingredients.
